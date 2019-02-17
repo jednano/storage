@@ -1,7 +1,7 @@
 {
   "name": "@jedmao/storage",
-  "version": "1.0.0",
-  "description": "A TypeScript starter project.",
+  "version": "1.0.1",
+  "description": "A Storage class that implements the Storage interface of the Web Storage API.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -63,7 +63,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jedmao/starter.git"
+    "url": "git+https://github.com/jedmao/storage.git"
   },
   "keywords": [
     "storage",
@@ -73,9 +73,9 @@
   "author": "Jed Mao <jedmao@outlook.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jedmao/starter/issues"
+    "url": "https://github.com/jedmao/storage/issues"
   },
-  "homepage": "https://github.com/jedmao/starter#readme",
+  "homepage": "https://github.com/jedmao/storage#readme",
   "devDependencies": {
     "@jedmao/tsconfig": "^0.3.0",
     "@types/jest": "^24.0.5",
