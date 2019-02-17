@@ -1,6 +1,6 @@
 {
   "name": "@jedmao/storage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Storage class that implements the Storage interface of the Web Storage API.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -56,10 +56,7 @@
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
     ],
-    "automock": false,
-    "setupFiles": [
-      "./src/setupTests.ts"
-    ]
+    "automock": false
   },
   "repository": {
     "type": "git",
@@ -86,7 +83,6 @@
     "eslint-config-prettier": "^4.0.0",
     "husky": "^1.3.1",
     "jest": "^24.1.0",
-    "jest-fetch-mock": "^2.1.1",
     "jest-watch-typeahead": "^0.2.1",
     "lint-staged": "^8.1.4",
     "prettier": "^1.16.4",
