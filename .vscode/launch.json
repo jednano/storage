@@ -5,18 +5,25 @@
       "name": "Current TS File",
       "type": "node",
       "request": "launch",
-      "args": ["${file}"],
-      "runtimeArgs": ["-r", "ts-node/register"]
+      "args": [
+        "${file}",
+      ],
+      "runtimeArgs": [
+        "-r",
+        "ts-node/register",
+      ],
     },
     {
       "type": "node",
       "name": "vscode-jest-tests",
       "request": "launch",
       "program": "${workspaceFolder}/node_modules/jest/bin/jest",
-      "args": ["--runInBand"],
+      "args": [
+        "--runInBand"
+      ],
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
-    }
-  ]
+      "internalConsoleOptions": "neverOpen",
+    },
+  ],
 }

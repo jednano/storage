@@ -8,7 +8,9 @@
         "kind": "build",
         "isDefault": true
       },
-      "problemMatcher": ["$tsc"]
+      "problemMatcher": [
+        "$tsc"
+      ]
     },
     {
       "type": "npm",
@@ -31,5 +33,5 @@
       "script": "watch",
       "group": "test"
     }
-  ]
+  ],
 }
