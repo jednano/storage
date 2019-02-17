@@ -1,7 +1,9 @@
+import { WebStorage } from './types'
+
 /**
  * Allows the addition, modification, or deletion of stored data items.
  */
-export default class WebStorage implements Storage {
+export default class Storage implements WebStorage {
 	private storage: { [key: string]: string } = {}
 
 	/**

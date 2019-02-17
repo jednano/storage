@@ -1,6 +1,6 @@
 /* eslint-env node, jest */
-import Storage from '.'
-import commonJSModule = require('.')
+import Storage from './Storage'
+import commonJSModule = require('./Storage')
 
 describe('Storage class', () => {
 	it('exports a CommonJS module for npm compatibility', () => {
@@ -10,6 +10,11 @@ describe('Storage class', () => {
 	it('exports a circular default prop', () => {
 		// @ts-ignore
 		expect(Storage.default.default).toBe(Storage)
+	})
+
+	it('exports a class named Storage', () => {
+		expect(Storage.name).toBe('Storage')
+		expect(new Storage() instanceof Storage).toBe(true)
 	})
 
 	it('sets and gets an item', () => {
