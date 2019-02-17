@@ -1,7 +1,7 @@
 {
   "name": "@jedmao/storage",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A TypeScript starter project.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,7 +20,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "tsc --noEmit"
+      "pre-push": "tsc --noEmit && npm run cover"
     }
   },
   "lint-staged": {
