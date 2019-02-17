@@ -1,6 +1,5 @@
 {
   "name": "@jedmao/storage",
-  "private": true,
   "version": "1.0.0",
   "description": "A TypeScript starter project.",
   "main": "dist/index.js",
