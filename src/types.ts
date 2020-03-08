@@ -1,1 +1,1 @@
-export type WebStorage = Storage
+export type _Storage = Storage
