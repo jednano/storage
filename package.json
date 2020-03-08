@@ -3,18 +3,25 @@
   "version": "2.0.1",
   "description": "A Storage class that implements the Storage interface of the Web Storage API.",
   "main": "dist/Storage.js",
+  "module": "dist/esm/Storage.js",
   "types": "dist/Storage.d.ts",
+  "files": [
+    "dist/Storage*",
+    "dist/types.d.ts",
+    "dist/esm/Storage.js"
+  ],
   "scripts": {
-    "clean": "rimraf coverage dist *.log* ts-*",
-    "codecov": "codecov -f coverage/lcov.info",
+    "clean": "rimraf coverage dist *.log* storage-*",
     "lint": "eslint src/**/*.ts",
     "prebuild": "rimraf dist",
-    "build": "tsc",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
     "precover": "rimraf coverage",
     "cover": "jest --coverage",
     "pretest": "npm run lint",
     "test": "jest --watch",
-    "prepublishOnly": "npm run lint && npm run cover && npm run build"
+    "commit": "git-cz"
   },
   "husky": {
     "hooks": {
@@ -23,10 +30,11 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,json,md}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
+    "*.{ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
     ]
   },
   "prettier": {
@@ -34,6 +42,20 @@
     "semi": false,
     "singleQuote": true,
     "trailingComma": "all"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "extends": "@jedmao/semantic-release-npm-github-config",
+    "branch": "master"
   },
   "jest": {
     "preset": "ts-jest",
@@ -55,8 +77,7 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ],
-    "automock": false
+    ]
   },
   "repository": {
     "type": "git",
@@ -64,7 +85,10 @@
   },
   "keywords": [
     "storage",
+    "mock",
     "web",
+    "local",
+    "session",
     "typescript"
   ],
   "author": "Jed Mao <jedmao@outlook.com>",
@@ -74,21 +98,27 @@
   },
   "homepage": "https://github.com/jedmao/storage#readme",
   "devDependencies": {
-    "@jedmao/tsconfig": "^0.3.0",
-    "@types/jest": "^25.1.2",
-    "@types/node": "^13.7.0",
-    "@typescript-eslint/eslint-plugin": "^1.11.0",
-    "@typescript-eslint/parser": "^1.11.0",
-    "eslint": "^6.0.1",
-    "eslint-config-prettier": "^6.0.0",
-    "husky": "^4.2.2",
-    "jest": "^25.1.0",
-    "jest-watch-typeahead": "^0.4.2",
-    "lint-staged": "^10.0.7",
-    "prettier": "^1.18.2",
-    "rimraf": "^3.0.2",
-    "ts-jest": "^25.2.0",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.2"
+    "@commitlint/cli": "^8",
+    "@commitlint/config-conventional": "^8",
+    "@jedmao/semantic-release-npm-github-config": "^1",
+    "@jedmao/tsconfig": "^0.3",
+    "@types/jest": "^25",
+    "@types/node": "^13",
+    "@typescript-eslint/eslint-plugin": "^2",
+    "@typescript-eslint/parser": "^2",
+    "commitizen": "^4",
+    "cz-conventional-changelog": "^3",
+    "eslint": "^6",
+    "eslint-config-prettier": "^6",
+    "husky": "^4",
+    "jest": "^25",
+    "jest-watch-typeahead": "^0.4",
+    "lint-staged": "^10",
+    "prettier": "^1",
+    "rimraf": "^3",
+    "semantic-release": "^17",
+    "ts-jest": "^25",
+    "ts-node": "^8",
+    "typescript": "^3.8"
   }
 }

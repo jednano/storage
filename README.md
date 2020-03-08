@@ -1,8 +1,8 @@
 # @jedmao/storage
 
+[![GitHub Actions](https://github.com/jedmao/storage/workflows/Node%20CI/badge.svg?event=push)](https://github.com/jedmao/storage/actions)
 [![NPM version](http://img.shields.io/npm/v/@jedmao/storage.svg?style=flat)](https://www.npmjs.org/package/@jedmao/storage)
 [![npm license](http://img.shields.io/npm/l/@jedmao/storage.svg?style=flat-square)](https://www.npmjs.org/package/@jedmao/storage)
-[![Travis Build Status](https://img.shields.io/travis/jedmao/storage.svg)](https://travis-ci.org/jedmao/storage)
 [![codecov](https://codecov.io/gh/jedmao/storage/branch/master/graph/badge.svg)](https://codecov.io/gh/jedmao/storage)
 [![BundlePhobia Minified](https://badgen.net/bundlephobia/min/@jedmao/storage?label=min)](https://bundlephobia.com/result?p=@jedmao/storage)
 [![BundlePhobia Minified + gzip](https://badgen.net/bundlephobia/minzip/@jedmao/storage?label=min%2Bgzip)](https://bundlephobia.com/result?p=@jedmao/storage)
@@ -24,7 +24,7 @@ $ npm install [--save[-dev]] @jedmao/storage
 ## Usage
 
 ```ts
-import Storage from '@jedmao/storage'
+import { Storage } from '@jedmao/storage'
 
 const data = { bar: 42 }
 const storage = new Storage()

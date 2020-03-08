@@ -1,17 +1,6 @@
-/* eslint-env node, jest */
-import Storage from './Storage'
-import commonJSModule = require('./Storage')
+import { Storage } from './Storage'
 
-describe('Storage class', () => {
-	it('exports a CommonJS module for npm compatibility', () => {
-		expect(commonJSModule).toBe(Storage)
-	})
-
-	it('exports a circular default prop', () => {
-		// @ts-ignore
-		expect(Storage.default.default).toBe(Storage)
-	})
-
+describe(`${Storage.name} class`, () => {
 	it('exports a class named Storage', () => {
 		expect(Storage.name).toBe('Storage')
 		expect(new Storage() instanceof Storage).toBe(true)
@@ -23,9 +12,14 @@ describe('Storage class', () => {
 		expect(storage.getItem('foo')).toBe('bar')
 	})
 
+	it('sets an `undefined` value as "undefined"', () => {
+		const storage = new Storage()
+		storage.setItem('foo', undefined as any)
+		expect(storage.getItem('foo')).toBe('undefined')
+	})
+
 	it('sets a number to a string', () => {
 		const storage = new Storage()
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		storage.setItem('foo', 42 as any)
 		expect(storage.getItem('foo')).toBe('42')
 	})
@@ -34,7 +28,7 @@ describe('Storage class', () => {
 		const storage = new Storage()
 		storage.setItem('foo', 'bar')
 		storage.removeItem('foo')
-		expect(storage.getItem('foo')).toBeUndefined()
+		expect(storage.getItem('foo')).toBeNull()
 	})
 
 	it('gets length', () => {
@@ -55,5 +49,23 @@ describe('Storage class', () => {
 		const storage = new Storage()
 		storage.setItem('foo', 'bar')
 		expect(storage.key(0)).toBe('foo')
+	})
+
+	it('returns null when requesting a key index that does not exist', () => {
+		const storage = new Storage()
+		storage.setItem('foo', 'bar')
+		expect(storage.key(1)).toBeNull()
+	})
+
+	it('returns first key when requesting a key index of `NaN`', () => {
+		const storage = new Storage()
+		storage.setItem('foo', 'bar')
+		expect(storage.key(NaN)).toBe('foo')
+	})
+
+	it('returns first key when requesting a key index of "x"', () => {
+		const storage = new Storage()
+		storage.setItem('foo', 'bar')
+		expect(storage.key('x' as any)).toBe('foo')
 	})
 })

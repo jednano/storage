@@ -1,7 +1,6 @@
 {
   "env": {
-    "es6": true,
-    "node": true
+    "es6": true
   },
   "globals": {
     "fetch": true
@@ -34,17 +33,23 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-object-literal-type-assertion": [
-      "error",
-      {
-        "allowAsParameter": true
-      }
-    ],
     "@typescript-eslint/no-this-alias": [
       "error",
       {
         "allowDestructuring": true
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "env": {
+        "node": true,
+        "jest": true
+      },
+      "files": "**/*.test.ts",
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ]
 }

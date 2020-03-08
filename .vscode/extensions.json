@@ -3,7 +3,6 @@
     "dbaeumer.vscode-eslint",
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
-    "orta.vscode-jest",
-    "tlent.jest-snapshot-language-support"
+    "orta.vscode-jest"
   ]
 }
