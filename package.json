@@ -118,7 +118,7 @@
     "rimraf": "^3",
     "semantic-release": "^17",
     "ts-jest": "^25",
-    "ts-node": "^8",
+    "ts-node": "^9",
     "typescript": "^3.8"
   }
 }
