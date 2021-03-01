@@ -98,7 +98,7 @@
   },
   "homepage": "https://github.com/jedmao/storage#readme",
   "devDependencies": {
-    "@commitlint/cli": "^11",
+    "@commitlint/cli": "^12",
     "@commitlint/config-conventional": "^12",
     "@jedmao/semantic-release-npm-github-config": "^1",
     "@jedmao/tsconfig": "^0.3",
