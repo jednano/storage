@@ -116,7 +116,7 @@
     "lint-staged": "^11",
     "prettier": "^2",
     "rimraf": "^3",
-    "semantic-release": "^17",
+    "semantic-release": "^19",
     "ts-jest": "^25",
     "ts-node": "^10",
     "typescript": "^3.8"
